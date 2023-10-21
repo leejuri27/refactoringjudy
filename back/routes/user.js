@@ -47,8 +47,19 @@ router.post('/login', (req, res) => {
 })
 
 // 아이디 찾기
-router.get('/find_id', (req, res)=>{
-    res.render('find_id')
+router.post('/find_id', (req, res)=>{
+    url = 'http://localhost:3333/find_id'
+    // console.log("아이디 찾찾찾찾", req.body)
+    let {name, tel} = req.body
+    conn.query(queries.findId, [name, tel], (err, rows)=>{
+        console.log("아이디찾기 테스트트트", rows)
+        // if (rows.length > 0){
+            res.render('find_id', {list:rows})
+        // } else {
+        //     res.render('find_id')
+        // }
+        // console.log("", res.list)
+    })
 })
 
 

@@ -237,7 +237,13 @@ module.exports = {
 		 group by c.review_seq, d.review_seq 
 		   ) sub
       ) sub
-where sub.rownum <= 5`
+where sub.rownum <= 5`,
+
+findId : `select user_id, created_at from al_user where user_name=? and user_phone=?`
+
+
+
+
 
 
 

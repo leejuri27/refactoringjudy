@@ -37,6 +37,11 @@ router.get('/find_id', (req, res) => {
     res.render('find_id')
 })
 
+// 비밀번호찾기 페이지 이동
+router.get('/find_pw', (req, res) => {
+    res.render('find_pw')
+})
+
 /////////////////////////////관리자페이지/////////////////////////////////
 
 // admin로그인 페이지 이동
